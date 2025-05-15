@@ -3,6 +3,7 @@ import ee
 import folium
 import matplotlib.pyplot as plt
 import pandas as pd
+import json
 import base64
 import io
 import imgkit
