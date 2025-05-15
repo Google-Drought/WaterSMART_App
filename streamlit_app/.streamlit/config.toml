@@ -4,3 +4,7 @@ base = "light"
 [server]
 enableCORS = false
 enableXsrfProtection = false
+enableWebsocketCompression = false
+headless = true
+port = 8080
+serveStaticAssets = true

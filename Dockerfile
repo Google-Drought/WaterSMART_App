@@ -18,6 +18,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 # --- copy application code --------------------------------
 COPY streamlit_app /app
 
+# --- set Streamlit server environment variables -----------
+ENV STREAMLIT_SERVER_HEADLESS true
+ENV STREAMLIT_SERVER_PORT 8080
+ENV STREAMLIT_SERVER_ENABLECORS false
+ENV STREAMLIT_SERVER_ENABLEXSRFPROTECTION false
+ENV STREAMLIT_SERVER_SERVESTATICASSETS true
+
 # --- Cloud Run expects the app to listen on $PORT ----------
 ENV PORT 8080
 CMD ["streamlit", "run", "watersmart_streamlit_app.py", \

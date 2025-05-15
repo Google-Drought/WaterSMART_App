@@ -1,10 +1,10 @@
-streamlit 
+streamlit==1.33.0
 pydeck 
 pandas
 matplotlib
 numpy
 Pillow 
-folium
+folium>=0.14.0
 geopandas
 streamlit-folium==0.13.0
 earthengine-api
@@ -14,3 +14,4 @@ pillow==10.2.0
 watchdog==3.0.0
 PyPDF2
 imgkit
+
