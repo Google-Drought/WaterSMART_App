@@ -43,10 +43,10 @@ from app_def.content.definitions import render_definitions
 from definitions_references import definitions_text
 
 # GLOBAL PATHS
-PATH_COEFFICIENTS = 'https://raw.githubusercontent.com/ankshah131/WaterSMART_App/main/streamlit_app/MixedEffectsModelCoefficients102924_ppetquad.csv'
-PATH_SOIL_TEXTURE_LEGEND = "https://raw.githubusercontent.com/ankshah131/WaterSMART_App/57bbbf9d71e4ab39bc39f6b86699799a94efc283/streamlit_app/app_def/assets/images/soil_texture_logo.png"
-PATH_MAP_LEGENDS = "https://raw.githubusercontent.com/ankshah131/WaterSMART_App/eda53037fde15d64cc1f2e89d543174888a8223c/streamlit_app/app_def/assets/images/map_legends.png"
-PATH_LOGOS = "https://raw.githubusercontent.com/ankshah131/WaterSMART_App/c490a2622b103eec28df2371dfabcc2c45b439b9/streamlit_app/app_def/assets/logos.png"
+PATH_COEFFICIENTS = 'https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/MixedEffectsModelCoefficients102924_ppetquad01357810_24mwtd_removed.csv'
+PATH_SOIL_TEXTURE_LEGEND = "https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/app_def/assets/images/soil_texture_logo.png"
+PATH_MAP_LEGENDS = "https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/app_def/assets/images/map_legends.png"
+PATH_LOGOS = "https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/app_def/assets/logos.png"
 
 # Earth Engine Setup
 def get_auth():
