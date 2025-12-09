@@ -100,6 +100,18 @@ def crop_pdf_to_letter(pdf_buffer):
     return output
 
 
+def check_data_availability(coords_ee):
+
+    # Define region as union of Nevada and Central Basin and Range LIII Ecoregion
+    states = ee.FeatureCollection("TIGER/2018/States");
+    nv_geom = states.filter(ee.Filter.eq('NAME', 'Nevada')).geometry()
+    eco = ee.FeatureCollection("EPA/Ecoregions/2013/L3")
+    cbr_geom = eco.filter(ee.Filter.eq('na_l3name', 'Central Basin and Range')).geometry()
+    region = cbr_geom.union(nv_geom, 10)
+
+    return coords_ee.intersects(region).getInfo()
+
+
 # ---- Static map renderer ----
 def create_map_snapshot(lat, lon, zoom=8):
     m = StaticMap(400, 300)
@@ -420,6 +432,12 @@ with tab1:
         st.empty()
 
         try:
+
+            # Check data availability
+            if not check_data_availability(coords_ee):
+                st.error("Sorry, data is not available for the selected location. Please choose a location within Nevada or the Central Basin and Range Ecoregion.")
+                st.stop()
+
             # Parameters
             eto_img = ee.Image("projects/localsolve/assets/climate_variables/GRIDMET_Mean_Annual_ETo_1991_2020")
             precip_img = ee.Image("projects/localsolve/assets/climate_variables/GRIDMET_Mean_Annual_Precip_1991_2020")
