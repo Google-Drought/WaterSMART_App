@@ -356,7 +356,7 @@ def render_definitions():
         This can influence the ease of working with the soil, the amount of water and air the soil holds, and the rate at which water enters and moves through the soil. 
         <span class="source-text">[Source for definition: Food and Agriculture Organization, 2006; Source of data layer: Walkinshaw et all (2020)]</span>
         Select soil textures to explore how different proportions of sand, silt, and clay influence the soil's ability to retain water. For example, clay can hold water more tightly, limiting plant access when dry.""",
-        "https://raw.githubusercontent.com/ankshah131/WaterSMART_App/46955734559a0046773e492b70d013737377c1ec/streamlit_app/app_def/assets/images/soil_texture.png", 
+        "https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/app_def/assets/images/soil_texture.png", 
         "Soil Texture Example",
         image_size="medium",
         section_id="soil-texture"
@@ -377,7 +377,7 @@ def render_definitions():
         """Potential evapotranspiration gives an indication of how “thirsty” the atmosphere is.
         Here, it is represented as the American Society of Civil Engineers’ Grass Reference Evapotranspiration (ETref), calculated using the Penman-Monteith method.
         ETref is the amount of water that would evaporate or be transpired from a well-watered grass surface.""",
-        "https://raw.githubusercontent.com/ankshah131/WaterSMART_App/2a98d82114927e7ebd5facfbf7b0351a88d6ae64/streamlit_app/app_def/assets/images/et_ref.png",
+        "https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/app_def/assets/images/et_ref.png",
         "ETref Example",
         image_size="small",
         section_id="evapotranspiration"
@@ -398,7 +398,7 @@ def render_definitions():
     #     "Soil Texture Selection",
     #     """Select soil textures to explore how different proportions of sand, silt, and clay influence the soil's ability to retain water. 
     #     For example, clay can hold water more tightly, limiting plant access when dry.""",
-    #     "https://raw.githubusercontent.com/ankshah131/WaterSMART_App/46955734559a0046773e492b70d013737377c1ec/streamlit_app/app_def/assets/images/soil_texture.png",
+    #     "https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/app_def/assets/images/soil_texture.png",
     #     "Soil Texture Example",
     #     image_size="small",
     #     section_id="soil-texture-selection"
@@ -420,7 +420,7 @@ def render_definitions():
         LAI is the one-sided green leaf area per unit of ground surface area, and its value can be an indication of the health of an ecosystem (Fang et al. 2019).
         We have assumed a typical target LAI for a phreatophytic shrubland in Nevada to be 1, whereas a meadow in Nevada would have a typical target LAI of 2, as shown in examples below. 
         <span class="source-text">[LAI Data Source: <a href="https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MCD15A3H" target="_blank">MODIS</a>]</span>""",
-        "https://raw.githubusercontent.com/ankshah131/WaterSMART_App/2a98d82114927e7ebd5facfbf7b0351a88d6ae64/streamlit_app/app_def/assets/images/lai_examples1.png",
+        "https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/app_def/assets/images/lai_examples1.png",
         "LAI Examples",
         image_size="medium",
         section_id="leaf-area-index"
@@ -441,7 +441,7 @@ def render_definitions():
         """The groundwater component of evapotranspiration is the portion of total evapotranspiration that is extracted from groundwater (i.e., the saturated zone). 
         The remainder of transpiration comes from the vadose (i.e., the unsaturated) zone. If the water table were deeper, the groundwater component might be reduced. 
         The groundwater component is a good indicator of how much groundwater is used by GDEs when calculating the water budget of a groundwater system.""",
-        "https://raw.githubusercontent.com/ankshah131/WaterSMART_App/dda06340a021b043ac3c74e4b1dace9b375f01e0/streamlit_app/app_def/assets/images/groundwater_et.png",
+        "https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/app_def/assets/images/groundwater_et.png",
         "(Modified from Lowry and Loheide, 2010)",
         image_size="small",
         section_id="etgw"
@@ -453,7 +453,7 @@ def render_definitions():
         """Groundwater subsidy is the additional water available in the vadose (i.e., unsaturated) zone for root water uptake resulting from shallow water table conditions.
         It is a hypothetical quantity that cannot be measured in the field but is a good indicator of how much GDEs in water-limited 
         environments might benefit from shallow groundwater conditions that reduces the water stress experienced by vegetation.""",
-        "https://raw.githubusercontent.com/ankshah131/WaterSMART_App/2a98d82114927e7ebd5facfbf7b0351a88d6ae64/streamlit_app/app_def/assets/images/groundwater_subsidy.png",
+        "https://raw.githubusercontent.com/Google-Drought/WaterSMART_App/refs/heads/main/streamlit_app/app_def/assets/images/groundwater_subsidy.png",
         "(Modified from Lowry and Loheide, 2010)",
         image_size="small",
         section_id="groundwater-subsidy"
