@@ -424,7 +424,7 @@ with tab1:
             eto_img = ee.Image("projects/localsolve/assets/climate_variables/GRIDMET_Mean_Annual_ETo_1991_2020")
             precip_img = ee.Image("projects/localsolve/assets/climate_variables/GRIDMET_Mean_Annual_Precip_1991_2020")
             pwd_img = ee.Image("projects/localsolve/assets/climate_variables/GRIDMET_Mean_Annual_Water_Deficit_1991_2020")
-            admin_gw = ee.FeatureCollection('projects/dri-apps/assets/NVAdminGWBoundaries')
+            admin_gw = ee.FeatureCollection('projects/dri-apps/assets/WaterSMART/NVAdminGWBoundaries')
 
             eto_value = eto_img.reduceRegion(ee.Reducer.mean(), coords_ee, 4000).getInfo().get('mean_annual_eto')
             precip_value = precip_img.reduceRegion(ee.Reducer.mean(), coords_ee, 4000).getInfo().get('mean_annual_pr')
