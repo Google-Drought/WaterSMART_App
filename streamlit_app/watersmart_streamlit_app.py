@@ -222,7 +222,7 @@ with tab1:
     }
 
     layer_assets = {
-        "Administrative groundwater boundaries": "projects/dri-apps/assets/NVAdminGWBoundaries",
+        "Administrative groundwater boundaries": "projects/dri-apps/assets/WaterSMART/NVAdminGWBoundaries",
         "Soil texture": "projects/sat-io/open-datasets/CSRL_soil_properties/physical/soil_texture_profile/texture_2550",
         "Average potential evapotranspiration": "projects/localsolve/assets/climate_variables/GRIDMET_Mean_Annual_ETo_1991_2020",
         "Average precipitation": "projects/localsolve/assets/climate_variables/GRIDMET_Mean_Annual_Precip_1991_2020", 
