@@ -1,7 +1,7 @@
 streamlit 
 pydeck 
 pandas
-matplotlib
+matplotlib<3.11
 numpy
 Pillow 
 folium
