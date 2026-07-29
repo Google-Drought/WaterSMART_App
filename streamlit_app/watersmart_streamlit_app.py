@@ -663,20 +663,22 @@ with tab1:
                     dfsum['pet2'] * dfsum['aetgwPET2x']
                 )
                 
+                # AET cannot be negative. Apply this lower bound before using
+                # AET to calculate the free-drainage baseline and GW subsidy.
+                dfsum["aetcalc"] = dfsum["aetcalc"].clip(lower=0)
+
                 # calculate GW subsidy based on AET differences rather than using equation
-                etabase = dfsum[(dfsum["wtd2"] == "Free Drain")]
-                etabase['aetcalc2'] = etabase['aetcalc']
-                etabase2 = etabase[['wy','aetcalc2']]
+                etabase2 = (
+                    dfsum.loc[dfsum["wtd2"] == "Free Drain", ["wy", "aetcalc"]]
+                    .rename(columns={"aetcalc": "aetcalc2"})
+                )
                 dfsum = pd.merge(dfsum, etabase2, on="wy", how="left")
                 dfsum['gwsubscalc'] = (dfsum['aetcalc'] - dfsum['aetcalc2'])
-                dfsum['gwsubscalcratio'] = (dfsum['gwsubscalc'] / dfsum['aetcalc'])
                 
                 # remove remnant error in calcs
                 dfsum["aetgwcalc"]=dfsum["aetgwcalc"].apply(lambda x: 0 if x <1 else x)
                 dfsum["LAIcalc"]=dfsum["LAIcalc"].apply(lambda x: 0 if x <0 else x)
-                dfsum["aetcalc"]=dfsum["aetcalc"].apply(lambda x: 0 if x <1 else x)
                 dfsum["gwsubscalc"]=dfsum["gwsubscalc"].apply(lambda x: 0 if x <1 else x)
-                dfsum["gwsubscalc"]=dfsum[["gwsubscalcratio","gwsubscalc","aetcalc"]].apply(lambda x: x["aetcalc"] if x["gwsubscalcratio"] > 1 else x["gwsubscalc"], axis=1)
                 # # Display results
                 # st.markdown("### We’ve got your data, here is a summary:")
                 # st.markdown(f"""
@@ -828,7 +830,11 @@ with tab1:
                 ]
                 
                 # Create 'ratio' column for gwsubscalc/aetcalc
-                gwsubs = gwsubs.assign(ratio = gwsubs["gwsubscalc"] / gwsubs["aetcalc"])
+                gwsubs = gwsubs.assign(
+                    ratio=gwsubs["gwsubscalc"].div(gwsubs["aetcalc"]).where(
+                        gwsubs["aetcalc"].ne(0), 0
+                    )
+                )
                 
                 # Group by wtd2 and compute min, max, minperc, maxperc
                 gwsubssum = (
@@ -899,7 +905,11 @@ with tab1:
                     labs(x="Water Table Depth", y="Annual Groundwater Subsidy (mm)",  color="Annual Potential\nWater Deficit (mm)")
                 )
                 # Create 'ratio' column for gwetcalc/aetcalc
-                dfsum = dfsum.assign(ratio = dfsum["aetgwcalc"] / dfsum["aetcalc"])
+                dfsum = dfsum.assign(
+                    ratio=dfsum["aetgwcalc"].div(dfsum["aetcalc"]).where(
+                        dfsum["aetcalc"].ne(0), 0
+                    )
+                )
                 
                 # Group by wtd2 and compute min, max, minperc, maxperc
                 aetgwsum = (
